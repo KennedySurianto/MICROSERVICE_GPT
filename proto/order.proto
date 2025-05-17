@@ -1,0 +1,19 @@
+syntax = "proto3";
+package proto;
+
+option go_package = "github.com/KennedySurianto/MICROSERVICE_GPT/proto;proto";
+
+service OrderService {
+  rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse);
+}
+
+message CreateOrderRequest {
+  int64 user_id = 1;
+  string item = 2;
+  int32 quantity = 3;
+}
+
+message CreateOrderResponse {
+  int64 order_id = 1;
+  string status = 2;
+}
